@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./Price.css";
 
 const coindeskURL = "https://api.coindesk.com/v1/bpi/currentprice/";
@@ -9,10 +8,10 @@ class Price extends Component {
     const currency = this.props.match.params.currency;
     const url = `${coindeskURL}${currency}.json`;
 
-    axios
-      .get(url)
+    fetch(url)
+      .then(response => response.json())
       .then(response => {
-        let newPrice = response.data.bpi[currency].rate;
+        let newPrice = response.bpi[currency].rate;
         this.props.setPrice(newPrice);
       })
       .catch(err => {

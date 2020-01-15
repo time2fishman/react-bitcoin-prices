@@ -8,10 +8,9 @@ class App extends Component {
     this.state = {
       price: null
     };
-    this.setPrice = this.setPrice.bind(this);
   }
 
-  setPrice(price) {
+  setPrice = price => {
     this.setState({ price: price });
   }
 

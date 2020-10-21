@@ -3,12 +3,7 @@ import Home from "../Home/Home";
 import "./App.css";
 
 function App(){
-  const [price, setPrices] = useState()
-
-
-  const setPrice = price => {
-    setPrice({ price: price})
-  }
+  const [price, setPrice] = useState()
 
     return (
       <div>

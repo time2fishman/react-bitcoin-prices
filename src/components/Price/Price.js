@@ -3,17 +3,17 @@ import "./Price.css";
 
 const coindeskURL = "https://api.coindesk.com/v1/bpi/currentprice/";
 
-const Price = () => {
+const Price = ({ match, price, setPrice }) => {
 
   useEffect(() => {
-    const currency = this.props.match.params.currency;
+    const currency = match.params.currency;
     const url = `${coindeskURL}${currency}.json`;
 
     fetch(url)
-      .then(response => response.json())
-      .then(response => {
-        let newPrice = response.bpi[currency].rate;
-        this.props.setPrice(newPrice);
+      .then(res => res.json())
+      .then(res => {
+        let newPrice = res.bpi[currency].rate;
+        setPrice(newPrice);
       })
       .catch(err => {
         console.error(err);
@@ -23,8 +23,8 @@ const Price = () => {
 
     return (
       <div>
-        <h1>Bitcoin price in {this.props.match.params.currency}</h1>
-        <div className="price">{this.props.price}</div>
+        <h1>Bitcoin price in {match.params.currency}</h1>
+        <div className="price">{price}</div>
       </div>
     );
 }

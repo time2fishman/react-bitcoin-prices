@@ -1,20 +1,15 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Home from "../Home/Home";
 import "./App.css";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      price: null
-    };
+function App(){
+  const [price, setPrices] = useState()
+
+
+  const setPrice = price => {
+    setPrice({ price: price})
   }
 
-  setPrice = price => {
-    this.setState({ price: price });
-  }
-
-  render() {
     return (
       <div>
         <nav>
@@ -29,7 +24,6 @@ class App extends Component {
         </main>
       </div>
     );
-  }
 }
 
 export default App;

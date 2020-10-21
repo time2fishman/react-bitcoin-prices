@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Currencies.css";
 import listOfCurrencies from "./list.json";
 
-class Currencies extends Component {
-  render() {
+const Currencies = () => {
     let list = listOfCurrencies.map(item => {
       return (
         <div className="currency" key={item.currency}>
@@ -15,7 +14,6 @@ class Currencies extends Component {
       );
     });
     return <div>{list}</div>;
-  }
 }
 
 export default Currencies;

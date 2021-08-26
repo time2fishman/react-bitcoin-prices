@@ -1,4 +1,3 @@
-import React from "react";
 import "./Currencies.css";
 import listOfCurrencies from "./list.json";
 

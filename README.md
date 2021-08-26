@@ -6,7 +6,7 @@ This app uses react router and the [Coindesk API](https://www.coindesk.com/api/)
 ## Installation Instructions
 
 ```
-git clone https://git.generalassemb.ly/sei-921/react-bitcoin-prices.git
+git clone <paste URL>
 cd react-bitcoin-prices
 npm install
 code .

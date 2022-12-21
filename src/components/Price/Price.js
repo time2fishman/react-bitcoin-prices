@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './Price.css';
 
 const coindeskURL = 'https://api.coindesk.com/v1/bpi/currentprice/';
 
 const Price = ({ price, setPrice }) => {
-	const currency = '';
+	const { currency } = useParams();
 	useEffect(() => {
 		const url = `${coindeskURL}${currency}.json`;
 
